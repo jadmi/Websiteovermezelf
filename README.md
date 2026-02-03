@@ -3,11 +3,11 @@
 ---
 check-out (elke dag) voortgang (einde elke week) bronnenlijst
 
-Wat heb ik vandaag gedaan?
-Hoeveel tijd heeft me dat gekost?
-Wat heb ik geleerd?
-Wat ga ik morgen doen?
-Je antwoorden neem je op in he README.MD (als een soort dagboek).
+- Wat heb ik vandaag gedaan?
+- Hoeveel tijd heeft me dat gekost?
+- Wat heb ik geleerd?
+- Wat ga ik morgen doen?
+
 
 voortgang
 
