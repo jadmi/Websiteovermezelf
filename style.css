@@ -1,0 +1,56 @@
+/* https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+:root {
+  --section-padding: 1rem;
+  --div-padding: 1rem;
+}
+
+section {
+  padding: var(--section-padding);
+}
+
+.levelBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: var(--div-padding);
+  border: solid 0.1cm black;
+  border-radius: 10%;
+}
+
+.levelTitle {
+  display: flex;
+  justify-content: center;
+  grid-column: span 2;
+}
+
+.levelImg {
+  border: 1px solid black;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  width: 20vw;
+}
+
+.levelBox ul {
+  display: grid;
+  /* Hulp van Cyd */
+  grid-template-columns: subgrid;
+  grid-column: span 2;
+  padding: 0;
+  list-style-type: none;
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
