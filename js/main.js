@@ -13,3 +13,16 @@ async function fetchJson(url) {
     .then((response) => response.json())
     .catch((error) => error);
 }
+
+const progressBar = document.getElementById("progress");
+let progress = 0;
+
+const updateProgress = () => {
+  if (progress < 100) {
+    progress += 1;
+    progressBar.value = progress;
+    requestAnimationFrame(updateProgress);
+  }
+};
+
+requestAnimationFrame(updateProgress);

@@ -1,11 +1,22 @@
 @font-face {
   font-family: headerFont;
-  src: url("../fonts/04b.ttf") format("ttf");
+  src: url("../fonts/04b.ttf") format("truetype");
 }
 
 @font-face {
   font-family: bodyFont;
-  src: url("../fonts/MonomaniacOne-Regular.ttf") format("ttf");
+  src: url("../fonts/MonomaniacOne-Regular.ttf") format("truetype");
+}
+
+:root {
+  --section-padding: 1rem;
+  --div-padding: 1rem;
+  --headerFont: "headerFont", monospace;
+  --bodyFont: "bodyFont", monospace;
+  --bodyFontSize: 1.8em;
+  --headerFontSize: 2em;
+  --headerShadow: 0 0 17.622px #06f, 0 1.41px 8.811px #06f;
+  --textColor: white;
 }
 
 /* https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css */
@@ -15,16 +26,73 @@
   box-sizing: border-box;
 }
 
-:root {
-  --section-padding: 1rem;
-  --div-padding: 1rem;
-  --bodyFont: bodyFont;
-  --headerFont: headerFont;
-}
-
 body {
   margin: 0;
-  font-family: var(--bodyFont);
+  height: 100%;
+  background-image: url(../images/bg.png);
+  background-repeat: no-repeat;
+  background-size: 40em auto;
+  background-position: center top;
+  background-attachment: fixed;
+  color: var(--textColor);
+
+  @media (width > 40em) {
+    background-size: cover;
+  }
+}
+
+/* hulp van Sanne */
+aside {
+  position: fixed;
+  background: rgb(0, 0, 0);
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  animation-name: disappearScreen;
+  animation-duration: 2s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+
+  display: grid;
+  h2 {
+    font-size: 1.5em;
+    /* justify-self: center;
+    align-self: end; */
+    place-self: end center;
+    font-family: var(--headerFont);
+    text-shadow: var(--headerShadow);
+  }
+}
+
+@keyframes disappearScreen {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* code/hulp van Jelle */
+progress[value] {
+  place-self: start center;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50%;
+  height: 1em;
+}
+
+progress[value]::-moz-progress-bar {
+  border: none;
+  border-radius: 2px;
+}
+
+progress[value]::-webkit-progress-value {
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
 }
 
 section {
@@ -35,8 +103,7 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: var(--div-padding);
-  border: solid 0.1cm black;
-  border-style: ridge;
+  border: solid 0.2cm rgb(255, 255, 255);
   border-radius: 10%;
 }
 
@@ -44,13 +111,20 @@ section {
   display: flex;
   justify-content: center;
   grid-column: span 2;
+  font-family: var(--headerFont);
+  font-size: var(--headerFontSize);
+  color: rgb(255, 255, 255);
+  /* van figma developer */
+  text-shadow: var(--headerShadow);
 }
 
 .levelImg {
-  border: 1px solid black;
   border-radius: 50%;
-  aspect-ratio: 1 / 1;
   width: 20vw;
+}
+
+.levelImg:hover {
+  transform: scale(1.1);
 }
 
 .levelBox ul {
@@ -66,5 +140,8 @@ section {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    font-size: var(--bodyFontSize);
+    font-family: var(--bodyFont);
+    color: var(--textColor);
   }
 }
