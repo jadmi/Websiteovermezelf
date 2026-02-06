@@ -1,6 +1,8 @@
 const apiURL = "https://fdnd.directus.app/items/person/300";
 const nameElement = document.querySelector("h1");
 
+const progressBar = document.querySelector("progress");
+
 fetchJson(apiURL).then(function (response) {
   console.log(response.data);
   nameElement.innerHTML = `
@@ -14,12 +16,12 @@ async function fetchJson(url) {
     .catch((error) => error);
 }
 
-const progressBar = document.getElementById("progress");
 let progress = 0;
 
 const updateProgress = () => {
   if (progress < 100) {
-    progress += 1;
+    progress += 0.37;
+    // progress += 100;
     progressBar.value = progress;
     requestAnimationFrame(updateProgress);
   }
