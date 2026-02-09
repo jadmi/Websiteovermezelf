@@ -8,8 +8,9 @@
   src: url("../fonts/MonomaniacOne-Regular.ttf") format("truetype");
 }
 
-:root {
-  --section-padding: 1rem;
+:html {
+  scroll-behavior: smooth;
+  --sectionPadding: 1rem;
   --headerFont: "headerFont", monospace;
   --bodyFont: "bodyFont", monospace;
   --bodyFontSize: 1.6em;
@@ -18,9 +19,42 @@
   /* kleurencode van figma */
   --headerShadow: 0 0 17.622px #06f, 0 5px 8.811px #06f;
   --textShadow: 0 5px 8.811px #ff00e5;
-  --textColor: rgb(255, 255, 255);
-  scroll-behavior: smooth;
+  --imgShadow: drop-shadow(0 10px 30px #ff00e5);
+  --textColor: white;
+
+  /* --bgLight: hsla(276, 86%, 51%, 1);
+  --bgDark: hsla(248, 74%, 32%, 1); */
+
+  --bgGradient: linear-gradient(
+    90deg,
+    hsla(276, 86%, 51%, 0.5) 0%,
+    hsla(287, 92%, 58%, 0.5) 21%,
+    hsla(305, 72%, 42%, 0.5) 43%,
+    hsla(295, 62%, 42%, 0.5) 71%,
+    hsla(289, 100%, 59%, 0.5) 99%
+  );
+
+  --bgImage: url(../images/bg.png);
 }
+
+:html {
+  @media (prefers-color-scheme: dark) {
+    --bgGradient: linear-gradient(
+      90deg,
+      hsla(248, 74%, 32%, 0.5) 0%,
+      hsla(248, 74%, 52%, 0.5) 20%,
+      hsla(263, 75%, 33%, 0.5) 43%,
+      hsla(263, 78%, 25%, 0.5) 69%,
+      hsla(273, 58%, 26%, 0.5) 97%
+    );
+    --textColor: white;
+    --imgShadow: drop-shadow(0 10px 30px #000000);
+  }
+}
+
+/* background: hsla(248, 74%, 32%, 1);
+
+background: linear-gradient(90deg, hsla(248, 74%, 32%, 1) 0%, hsla(248, 74%, 52%, 1) 20%, hsla(263, 75%, 33%, 1) 43%, hsla(295, 67%, 30%, 1) 69%, hsla(289, 76%, 24%, 1) 97%); */
 
 /* https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css */
 *,
@@ -32,18 +66,9 @@
 body {
   margin: 0;
   height: 100%;
-  background: hsla(276, 86%, 51%, 1);
+  color: var(--textColor);
 
-  background:
-    linear-gradient(
-      90deg,
-      hsla(276, 86%, 51%, 0.5) 0%,
-      hsla(287, 92%, 58%, 0.5) 21%,
-      hsla(305, 72%, 42%, 0.5) 43%,
-      hsla(295, 62%, 42%, 0.5) 71%,
-      hsla(289, 100%, 59%, 0.5) 99%
-    ),
-    url(../images/bg.png);
+  background: var(--bgGradient), var(--bgImage);
 
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,10 +79,6 @@ body {
   @media (width > 40em) {
     background-size: cover;
   }
-}
-
-h2 {
-  color: var(--textColor);
 }
 
 /* hulp van Sanne */
@@ -75,11 +96,12 @@ aside {
   right: 0;
 
   animation-name: disappearScreen;
-  animation-duration: 2.5s;
-  /* animation-duration: 0.1s; */
-  animation-delay: 2.3s;
+  /* animation-duration: 2.5s; */
+  animation-duration: 0.1s;
+  /* animation-delay: 2.3s; */
   /* animation-duration: 0.1s;
-  animation-delay: 0.1s; */
+  */
+  animation-delay: 0.1s;
   animation-fill-mode: forwards;
 
   display: grid;
@@ -133,7 +155,7 @@ progress[value]::-webkit-progress-bar {
 }
 
 section {
-  padding: var(--section-padding);
+  padding: var(--sectionPadding);
   height: 100vh;
   display: grid;
   align-items: center;
@@ -143,8 +165,6 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: var(--div-padding);
-  /* border: solid 0.2cm rgb(255, 255, 255);
-  border-radius: 10%; */
 }
 
 .levelTitle {
@@ -153,7 +173,6 @@ section {
   grid-column: span 2;
   font-family: var(--headerFont);
   font-size: var(--headerFontSize);
-  color: rgb(255, 255, 255);
   text-shadow: var(--headerShadow);
   animation: scaleUp 1.5s linear infinite;
 }
@@ -175,7 +194,7 @@ section {
   width: 15vw;
   animation: bounce 1.5s linear infinite;
   /* animation-direction: alternate; */
-  filter: drop-shadow(0 10px 30px #ff00e5);
+  filter: var(--imgShadow);
 }
 
 @keyframes bounce {
@@ -210,10 +229,10 @@ section {
     font-family: var(--bodyFont);
     text-shadow: var(--textShadow);
     animation: bounce 1.5s linear infinite;
-    color: var(--textColor);
   }
   a {
     text-decoration: none;
+    color: inherit;
   }
 }
 

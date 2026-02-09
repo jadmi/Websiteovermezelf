@@ -20,8 +20,8 @@ let progress = 0;
 
 const updateProgress = () => {
   if (progress < 100) {
-    progress += 0.37;
-    // progress += 100;
+    // progress += 0.37;
+    progress += 100;
     progressBar.value = progress;
     requestAnimationFrame(updateProgress);
   }
