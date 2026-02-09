@@ -10,15 +10,15 @@
 
 :root {
   --section-padding: 1rem;
-  --div-padding: 1rem;
   --headerFont: "headerFont", monospace;
   --bodyFont: "bodyFont", monospace;
-  --bodyFontSize: 1.8em;
-  --headerFontSize: 2.5em;
-  /* van figma developer */
+  --bodyFontSize: 1.6em;
+  --headerFontSize: 2em;
+  --loadingFontSize: 1.5em;
+  /* kleurencode van figma */
   --headerShadow: 0 0 17.622px #06f, 0 5px 8.811px #06f;
   --textShadow: 0 5px 8.811px #ff00e5;
-  --textColor: white;
+  --textColor: rgb(255, 255, 255);
   scroll-behavior: smooth;
 }
 
@@ -32,16 +32,32 @@
 body {
   margin: 0;
   height: 100%;
-  background-image: url(../images/bg.png);
+  background: hsla(276, 86%, 51%, 1);
+
+  background:
+    linear-gradient(
+      90deg,
+      hsla(276, 86%, 51%, 0.5) 0%,
+      hsla(287, 92%, 58%, 0.5) 21%,
+      hsla(305, 72%, 42%, 0.5) 43%,
+      hsla(295, 62%, 42%, 0.5) 71%,
+      hsla(289, 100%, 59%, 0.5) 99%
+    ),
+    url(../images/bg.png);
+
   background-repeat: no-repeat;
+  background-size: cover;
   background-position: center bottom;
   background-attachment: fixed;
   background-size: 40em auto;
-  color: var(--textColor);
 
   @media (width > 40em) {
     background-size: cover;
   }
+}
+
+h2 {
+  color: var(--textColor);
 }
 
 /* hulp van Sanne */
@@ -60,6 +76,7 @@ aside {
 
   animation-name: disappearScreen;
   animation-duration: 2.5s;
+  /* animation-duration: 0.1s; */
   animation-delay: 2.3s;
   /* animation-duration: 0.1s;
   animation-delay: 0.1s; */
@@ -67,7 +84,7 @@ aside {
 
   display: grid;
   h2 {
-    font-size: var(--headerFontSize);
+    font-size: var(--loadingFontSize);
     place-self: end center;
     font-family: var(--headerFont);
     text-shadow: var(--headerShadow);
@@ -206,7 +223,6 @@ section h2 {
   text-shadow: var(--headerShadow);
   display: flex;
   justify-content: center;
-  font-size: 3em;
 }
 
 .wave span {
@@ -243,7 +259,6 @@ section h2 {
 }
 
 .glow {
-  animation-name: neon;
   animation: glow ease-in-out;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
