@@ -113,10 +113,11 @@ progress[value]
 progress[value]::-webkit-progress-value 
 progress[value]::-webkit-progress-bar 
 ```
-
-
 Versie 1 site:
 
 https://github.com/user-attachments/assets/7ea27ccd-2698-4fae-b742-d1ace64c40bf
 
-
+## Maandag 9 februari
+Vandaag bezig geweest met light/dark mode, heeft vrijwel de hele dag gekost na workshop, probeerde de nieuwe manier met light-dark maar dat kan niet met de linear-gradients die ik gebruikte dus het moest met de andere manier, prefers color-scheme dark. 
+- Todo's: eigen informatie weergeven op site
+- Medestudenten informatie weergeven
