@@ -123,4 +123,4 @@ Vandaag bezig geweest met light/dark mode, heeft vrijwel de hele dag gekost na w
 - Medestudenten informatie weergeven
 
 ## Dinsdag 10 februari
-Vandaag bezig geweest met de opzet voor de eisen van mijn site, animatie voor de over mij tekst, target game voor de leerdoelen en het weergeven van de favoriete games van mensen uit de minor. Verder nog workshop grid vs flex en workshop hygiene gevolgd.
+Vandaag bezig geweest met de opzet voor de eisen van mijn site, animatie voor de over mij tekst, target game voor de leerdoelen en het weergeven van de favoriete games van mensen uit de minor. Verder nog de workshops grid vs flex en workshop hygiëne gevolgd.
