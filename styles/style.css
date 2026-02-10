@@ -8,7 +8,12 @@
   src: url("../fonts/MonomaniacOne-Regular.ttf") format("truetype");
 }
 
-:html {
+/* ====================== */
+/* CSS Vars */
+/* ====================== */
+
+html {
+  --theme: light;
   scroll-behavior: smooth;
   --sectionPadding: 1rem;
   --headerFont: "headerFont", monospace;
@@ -19,44 +24,63 @@
   /* kleurencode van figma */
   --headerShadow: 0 0 17.622px #06f, 0 5px 8.811px #06f;
   --textShadow: 0 5px 8.811px #ff00e5;
-  --imgShadow: drop-shadow(0 10px 30px #ff00e5);
+  --bodyShadow: 0 5px 20px #ffffff;
+  --imgShadow: drop-shadow(0 10px 30px #470f42);
   --textColor: white;
-
-  /* --bgLight: hsla(276, 86%, 51%, 1);
-  --bgDark: hsla(248, 74%, 32%, 1); */
-
-  --bgGradient: linear-gradient(
-    90deg,
-    hsla(276, 86%, 51%, 0.5) 0%,
-    hsla(287, 92%, 58%, 0.5) 21%,
-    hsla(305, 72%, 42%, 0.5) 43%,
-    hsla(295, 62%, 42%, 0.5) 71%,
-    hsla(289, 100%, 59%, 0.5) 99%
-  );
 
   --bgImage: url(../images/bg.png);
 }
 
-:html {
+/* ====================== */
+/* dark mode styling*/
+/* ====================== */
+
+html {
   @media (prefers-color-scheme: dark) {
-    --bgGradient: linear-gradient(
+    --theme: dark;
+    --textColor: white;
+    --imgShadow: drop-shadow(0 10px 30px #ffffff);
+  }
+}
+
+/* hulp van Sanne */
+html:has([value="light"]:checked) {
+  --theme: light;
+  --imgShadow: drop-shadow(0 10px 30px hsla(248, 74%, 52%, 1));
+}
+
+html:has([value="dark"]:checked) {
+  --theme: dark;
+}
+
+@container style(--theme:light) {
+  body {
+    --bg: linear-gradient(
+      90deg,
+      hsla(276, 86%, 51%, 0.5) 0%,
+      hsla(287, 92%, 58%, 0.5) 21%,
+      hsla(305, 72%, 42%, 0.5) 43%,
+      hsla(295, 62%, 42%, 0.5) 71%,
+      hsla(289, 100%, 59%, 0.5) 99%
+    );
+  }
+}
+
+@container style(--theme:dark) {
+  body {
+    --bg: linear-gradient(
       90deg,
       hsla(248, 74%, 32%, 0.5) 0%,
-      hsla(248, 74%, 52%, 0.5) 20%,
+      hsla(252, 74%, 52%, 0.5) 20%,
       hsla(263, 75%, 33%, 0.5) 43%,
       hsla(263, 78%, 25%, 0.5) 69%,
       hsla(273, 58%, 26%, 0.5) 97%
     );
-    --textColor: white;
-    --imgShadow: drop-shadow(0 10px 30px #000000);
   }
 }
 
-/* background: hsla(248, 74%, 32%, 1);
-
-background: linear-gradient(90deg, hsla(248, 74%, 32%, 1) 0%, hsla(248, 74%, 52%, 1) 20%, hsla(263, 75%, 33%, 1) 43%, hsla(295, 67%, 30%, 1) 69%, hsla(289, 76%, 24%, 1) 97%); */
-
 /* https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css */
+
 *,
 ::before,
 ::after {
@@ -66,9 +90,10 @@ background: linear-gradient(90deg, hsla(248, 74%, 32%, 1) 0%, hsla(248, 74%, 52%
 body {
   margin: 0;
   height: 100%;
+  accent-color: rgb(202, 14, 186);
   color: var(--textColor);
 
-  background: var(--bgGradient), var(--bgImage);
+  background: var(--bg), var(--bgImage);
 
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,6 +106,9 @@ body {
   }
 }
 
+/* ====================== */
+/* Loading screen styling */
+/* ====================== */
 /* hulp van Sanne */
 aside {
   pointer-events: none;
@@ -96,11 +124,9 @@ aside {
   right: 0;
 
   animation-name: disappearScreen;
-  /* animation-duration: 2.5s; */
+  /* animation-duration: 2.5s;
+  animation-delay: 2.3s; */
   animation-duration: 0.1s;
-  /* animation-delay: 2.3s; */
-  /* animation-duration: 0.1s;
-  */
   animation-delay: 0.1s;
   animation-fill-mode: forwards;
 
@@ -161,6 +187,14 @@ section {
   align-items: center;
 }
 
+/* ====================== */
+/* Dark mode switch styling */
+/* ====================== */
+
+/* ====================== */
+/*    Intro styling 
+/* ====================== */
+
 .levelBox {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -193,7 +227,6 @@ section {
   border-radius: 50%;
   width: 15vw;
   animation: bounce 1.5s linear infinite;
-  /* animation-direction: alternate; */
   filter: var(--imgShadow);
 }
 
@@ -244,6 +277,14 @@ section h2 {
   justify-content: center;
 }
 
+/* ====================== */
+/* Wave animation styling */
+/* ====================== */
+
+.wave {
+  padding: 3rem;
+}
+
 .wave span {
   animation: wave 2s ease-in-out infinite;
 }
@@ -276,6 +317,58 @@ section h2 {
     transform: translateY(-30px);
   }
 }
+
+/* ====================== */
+/* Over mij styling */
+/* ====================== */
+
+p {
+  font-family: var(--bodyFont);
+  text-shadow: var(--bodyShadow);
+  font-size: var(--bodyFontSize);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+/* hulp van Cyd */
+.movingBox {
+  --duplicates: 3;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 5rem;
+}
+
+.movingText {
+  width: max-content;
+  display: inline-flex;
+  animation-name: movingWords;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.text {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0.5rem;
+}
+
+@keyframes movingWords {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% / var(--duplicates)));
+  }
+}
+
+/* ====================== */
+/* Leerdoelen styling */
+/* ====================== */
 
 .glow {
   animation: glow ease-in-out;

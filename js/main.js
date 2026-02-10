@@ -3,6 +3,12 @@ const nameElement = document.querySelector("h1");
 
 const progressBar = document.querySelector("progress");
 
+const lightMode = document.querySelector;
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+if (isDarkMode) {
+}
+
 fetchJson(apiURL).then(function (response) {
   console.log(response.data);
   nameElement.innerHTML = `
