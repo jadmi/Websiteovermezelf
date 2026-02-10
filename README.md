@@ -121,3 +121,6 @@ https://github.com/user-attachments/assets/7ea27ccd-2698-4fae-b742-d1ace64c40bf
 Vandaag bezig geweest met light/dark mode, heeft vrijwel de hele dag gekost na workshop, probeerde de nieuwe manier met light-dark maar dat kan niet met de linear-gradients die ik gebruikte dus het moest met de andere manier, prefers color-scheme dark. 
 - Todo's: eigen informatie weergeven op site
 - Medestudenten informatie weergeven
+
+## Dinsdag 10 februari
+Vandaag bezig geweest met de opzet voor de eisen van mijn site, animatie voor de over mij tekst, target game voor de leerdoelen en het weergeven van de favoriete games van mensen uit de minor. Verder nog workshop grid vs flex en workshop hygiene gevolgd.
