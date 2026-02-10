@@ -1,5 +1,5 @@
-// const apiURL = "https://fdnd.directus.app/items/person/300";
-// const nameElement = document.querySelector("h1");
+const naamURL = "https://fdnd.directus.app/items/person/300";
+// const nameElement = document.querySelector(".wave");
 
 let base = "https://fdnd.directus.app/items";
 let endpoint =
@@ -12,6 +12,47 @@ const progressBar = document.querySelector("progress");
 
 const lightMode = document.querySelector;
 const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+const leerdoelButton = document.querySelector(".instructieGrid");
+const leerdoelList = document.querySelector("#leerdoelTargets");
+
+const canvas = document.querySelector(".canvas");
+const ulListItems = document.querySelectorAll("#leerdoelen li");
+
+leerdoelButton.addEventListener(
+  "click",
+  () => {
+    ulListItems.forEach((item) => {
+      // stukje AI in de functie, kwam zelf niet uit op position absolute
+      // Prompt: "How to keep the list items within the boundary of the container?"
+      item.style.position = "absolute";
+
+      const randomTop = Math.random() * 80;
+      const randomLeft = Math.random() * 80;
+
+      item.style.top = randomTop + "%";
+      item.style.left = randomLeft + "%";
+    });
+
+    leerdoelList.classList.add("leerdoelAnimation");
+
+    // stukje AI in de functie, kwam zelf met setTimeout maar dat werkte dus niet, AI raadde setinterval aan. Prompt: "How to make the function run infinitely?"
+    setInterval(() => {
+      ulListItems.forEach((item) => {
+        item.style.position = "absolute";
+
+        const randomTop = Math.random() * 80;
+        const randomLeft = Math.random() * 80;
+
+        item.style.top = randomTop + "%";
+        item.style.left = randomLeft + "%";
+      });
+    }, 2000);
+  },
+
+  // https://www.educative.io/answers/how-to-ensure-an-event-listener-is-only-fired-once-in-javascript
+  { once: true },
+);
 
 let progress = 0;
 
@@ -27,18 +68,20 @@ const updateProgress = () => {
 if (isDarkMode) {
 }
 
-// fetchJson(apiURL).then(function (response) {
+// fetchNaam(naamURL).then(function (response) {
 //   console.log(response.data);
 //   nameElement.innerHTML = `
 //     ${response.data.name}
 //   `;
 // });
 
-// async function fetchJson(url) {
+// async function fetchNaam(url) {
 //   return await fetch(url)
 //     .then((response) => response.json())
 //     .catch((error) => error);
 // }
+
+// fetchNaam();
 
 requestAnimationFrame(updateProgress);
 
@@ -56,11 +99,9 @@ async function haalMinorMensenop() {
     console.log(voornaam);
 
     let minorMensHTML = ` <li>
-        <h3>${voornaam} - ${minorMens.fav_game} </h3>
-        <p>${minorMens.fav_game}</p>
+        <p>${voornaam} - ${minorMens.fav_game} </p>
       </li> `;
     console.log(minorMens.fav_game);
     lijst.insertAdjacentHTML("beforeend", minorMensHTML);
-    lijst.ul;
   });
 }

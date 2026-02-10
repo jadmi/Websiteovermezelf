@@ -31,6 +31,33 @@ html {
   --bgImage: url(../images/bg.png);
 }
 
+/* https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  accent-color: rgb(202, 14, 186);
+  color: var(--textColor);
+
+  background: var(--bg), var(--bgImage);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+  background-size: 40em auto;
+
+  @media (width > 40em) {
+    background-size: cover;
+  }
+}
+
 /* ====================== */
 /* dark mode styling*/
 /* ====================== */
@@ -38,7 +65,7 @@ html {
 html {
   @media (prefers-color-scheme: dark) {
     --theme: dark;
-    --textColor: white;
+    --textColor: rgb(255, 255, 255);
     --imgShadow: drop-shadow(0 10px 30px #ffffff);
   }
 }
@@ -76,33 +103,6 @@ html:has([value="dark"]:checked) {
       hsla(263, 78%, 25%, 0.5) 69%,
       hsla(273, 58%, 26%, 0.5) 97%
     );
-  }
-}
-
-/* https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css */
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  height: 100%;
-  accent-color: rgb(202, 14, 186);
-  color: var(--textColor);
-
-  background: var(--bg), var(--bgImage);
-
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center bottom;
-  background-attachment: fixed;
-  background-size: 40em auto;
-
-  @media (width > 40em) {
-    background-size: cover;
   }
 }
 
@@ -224,7 +224,6 @@ section {
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using */
 /* https://stackoverflow.com/questions/35990445/how-to-move-a-div-up-and-down-infinitely-in-css3 */
 .levelImg {
-  border-radius: 50%;
   width: 15vw;
   animation: bounce 1.5s linear infinite;
   filter: var(--imgShadow);
@@ -275,6 +274,7 @@ section h2 {
   text-shadow: var(--headerShadow);
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 /* ====================== */
@@ -334,6 +334,14 @@ p {
   overflow: hidden;
 }
 
+#overMij {
+  align-content: start;
+}
+
+#overMij p {
+  font-size: 1.7em;
+}
+
 /* hulp van Cyd */
 .movingBox {
   --duplicates: 3;
@@ -346,9 +354,18 @@ p {
   width: max-content;
   display: inline-flex;
   animation-name: movingWords;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+.movingBox:nth-of-type(2) .movingText,
+.movingBox:nth-of-type(4) .movingText {
+  animation-name: movingWords2;
+  animation-duration: 3s;
+}
+
+.movingBox:nth-of-type(4) {
+  --duplicates: 2;
 }
 
 .text {
@@ -366,9 +383,22 @@ p {
   }
 }
 
+@keyframes movingWords2 {
+  from {
+    transform: translateX(calc(-100% / var(--duplicates)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 /* ====================== */
 /* Leerdoelen styling */
 /* ====================== */
+
+.instructieGrid {
+  display: grid;
+}
 
 .glow {
   animation: glow ease-in-out;
@@ -388,7 +418,7 @@ p {
       0 0 80px #6212f8;
   }
   100% {
-    transform: scale(1.02);
+    transform: scale(1.04);
     text-shadow:
       0 0 10px #c707ed,
       0 0 20px #b706da,
@@ -400,14 +430,46 @@ p {
 
 /* https://prismic.io/blog/css-text-animations */
 
-.glow + ul {
+/* .glow ul {
   opacity: 0;
   transition: 0.2s;
 }
-.glow + ul:target {
+.glow ul {
   animation-name: --leerdoelenbuttons;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+} */
+
+#leerdoelTargets {
+  opacity: 0;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 1rem;
+}
+
+.instructie {
+  text-align: center;
+  margin-top: -1em;
+}
+
+.canvas {
+  width: 80vw;
+  height: 80vh;
+  margin: auto;
+  display: flex;
+  position: relative; /* stukje bij absolute */
+}
+
+.bullseye {
+  width: 15vw;
+}
+
+.leerdoelAnimation {
+  animation-name: --leerdoelenbuttons;
+  animation-delay: 1;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }
 
 @keyframes --leerdoelenbuttons {
@@ -417,7 +479,7 @@ p {
   10% {
     opacity: 1;
   }
-  90% {
+  50% {
     opacity: 1;
   }
   100% {
@@ -426,11 +488,14 @@ p {
 }
 
 .games {
-  display: flex;
-  flex-direction: column;
   list-style-type: none;
 }
 
 .fc26 {
   background-image: url(../images/gameCovers/fc26.png);
+  width: 30vw;
+  height: 30vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
