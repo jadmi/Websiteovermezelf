@@ -399,3 +399,38 @@ p {
 }
 
 /* https://prismic.io/blog/css-text-animations */
+
+.glow + ul {
+  opacity: 0;
+  transition: 0.2s;
+}
+.glow + ul:target {
+  animation-name: --leerdoelenbuttons;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes --leerdoelenbuttons {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.games {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.fc26 {
+  background-image: url(../images/gameCovers/fc26.png);
+}
