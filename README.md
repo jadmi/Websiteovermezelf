@@ -118,9 +118,22 @@ Versie 1 site:
 https://github.com/user-attachments/assets/7ea27ccd-2698-4fae-b742-d1ace64c40bf
 
 ## Maandag 9 februari
-Vandaag bezig geweest met light/dark mode, heeft vrijwel de hele dag gekost na workshop, probeerde de nieuwe manier met light-dark maar dat kan niet met de linear-gradients die ik gebruikte dus het moest met de andere manier, prefers color-scheme dark. 
+Vandaag bezig geweest met light/dark mode, heeft (helaas) vrijwel de hele dag gekost na workshop, probeerde de nieuwe manier met light-dark maar dat kan niet met de linear-gradients die ik gebruikte dus het moest met de andere manier, prefers color-scheme dark. Ik heb dan ook geleeder over light-dark en alternatieve manier, daarbij ook voor het eerst gewerkt met has:.
+
 - Todo's: eigen informatie weergeven op site
 - Medestudenten informatie weergeven
 
 ## Dinsdag 10 februari
-Vandaag bezig geweest met de opzet voor de eisen van mijn site, animatie voor de over mij tekst, target game voor de leerdoelen en het weergeven van de favoriete games van mensen uit de minor. Verder nog de workshops grid vs flex en workshop hygiëne gevolgd.
+Vandaag bezig geweest met de opzet voor de eisen van mijn site, animatie voor de over mij tekst en daarbij marquee animaties geleerd. Verder begonnen met de target game voor de leerdoelen en het weergeven van de favoriete games van mensen uit de minor. Tot slot nog de workshops grid vs flex en workshop hygiëne gevolgd. 
+### Offline
+Toch nog bezig geweest om wat voortgang te maken in de tussentijd, geleerd over setInterval()
+
+## Woensdag 11 februari - code review
+- html lang stond nog op engels
+- let op consistente naamgeving
+- javascript comments bij functies
+- letten op let/const
+- scroll snap op site
+## Woensdag 11 februari - checkout
+Vandaag ben ik bezig geweest met het leerdoelen spel afmaken door de popovers toeg te voegen. Verder ben ik met de extra eis aan de slag gegaan, de favoriete games inladen en weergeven, wel handmatig de covers maken. Geleerd hoe je verder met de API werkt, van anderen data ophalen en deze inserten met .appendChild.
+
