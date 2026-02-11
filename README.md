@@ -124,3 +124,11 @@ Vandaag bezig geweest met light/dark mode, heeft vrijwel de hele dag gekost na w
 
 ## Dinsdag 10 februari
 Vandaag bezig geweest met de opzet voor de eisen van mijn site, animatie voor de over mij tekst, target game voor de leerdoelen en het weergeven van de favoriete games van mensen uit de minor. Verder nog de workshops grid vs flex en workshop hygiëne gevolgd.
+
+## Woensdag 11 februari - code review
+- html lang stond nog op engels
+- let op consistente naamgeving
+- javascript comments bij functies
+- letten op let/const
+- scroll snap op site
+## Woensdag 11 februari - checkout
