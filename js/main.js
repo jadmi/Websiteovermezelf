@@ -5,7 +5,7 @@ const hobbyElement = document.querySelectorAll(".text2 p:first-of-type");
 
 const base = "https://fdnd.directus.app/items";
 let endpoint =
-  "/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&sort=name&filter[fav_game][_nempty]&limit=5";
+  "/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&sort=name&filter[fav_game][_nempty]&limit=10";
 let url = base + endpoint;
 
 let lijst = document.querySelector(".game");

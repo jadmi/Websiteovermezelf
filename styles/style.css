@@ -20,7 +20,7 @@ html {
   --headerFont: "headerFont", monospace;
   --bodyFont: "bodyFont", monospace;
   --bodyFontSize: 1.6em;
-  --headerFontSize: 2em;
+  --headerFontSize: clamp(2em, 10vw, 3.5em);
   --loadingFontSize: 1.5em;
   /* kleurencode van figma */
   --headerShadow: 0 0 17.622px #06f, 0 5px 8.811px #06f;
@@ -59,7 +59,7 @@ body {
 }
 
 /* ====================== */
-/* dark mode styling*/
+/* dark mode switch styling */
 /* ====================== */
 
 label {
@@ -201,10 +201,6 @@ section {
 }
 
 /* ====================== */
-/* Dark mode switch styling */
-/* ====================== */
-
-/* ====================== */
 /*    Intro styling 
 /* ====================== */
 
@@ -237,7 +233,7 @@ section {
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using */
 /* https://stackoverflow.com/questions/35990445/how-to-move-a-div-up-and-down-infinitely-in-css3 */
 .levelImg {
-  width: 15vw;
+  width: clamp(15vw, 5vw, 25vw);
   animation: bounce 1.5s linear infinite;
   filter: var(--imgShadow);
 }
@@ -579,7 +575,7 @@ html:has(:popover-open) {
 }
 
 .games img {
-  width: 50vw;
-  height: 40vh;
+  width: 40vw;
+  height: 30vh;
   object-fit: cover;
 }
