@@ -7,19 +7,21 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <!-- <header><h1>Justin Admiraal</h1></header> -->
+    <!-- <header></header> -->
     <main>
       <!-- <label>
         <input type="radio" name="theme" value="auto" checked /> auto
       </label> -->
-
-      <label>
-        <input type="radio" name="theme" value="light" class="lightCheck" />
-        light
-      </label>
-      <label>
-        <input type="radio" name="theme" value="dark" class="darkCheck" /> dark
-      </label>
+      <div class="modeSwitcher">
+        <label>
+          <input type="radio" name="theme" value="light" class="lightCheck" />
+          light
+        </label>
+        <label>
+          <input type="radio" name="theme" value="dark" class="darkCheck" />
+          dark
+        </label>
+      </div>
       <section>
         <div class="levelBox">
           <h2 class="levelTitle">Pick level</h2>
@@ -28,7 +30,7 @@
               <li>
                 <img
                   class="levelImg"
-                  src="images/alien-monster-svgrepo-com.svg"
+                  src="images/alien.svg"
                   alt="alien-emoji"
                 />
                 Over mij
@@ -38,7 +40,7 @@
               <li>
                 <img
                   class="levelImg"
-                  src="images/bullseye-svgrepo-com.svg"
+                  src="images/bullseye.svg"
                   alt="bullseye-emoji"
                 />
                 Leerdoelen
@@ -78,18 +80,18 @@
 
         <div class="movingBox">
           <div class="movingText">
-            <div class="text">
+            <div class="text2">
               <p>Gamen -</p>
               <p>Muziek -</p>
               <p>Sportschool -</p>
             </div>
-            <div class="text">
+            <div class="text2">
               <p>Gamen -</p>
               <p>Muziek -</p>
               <p>Sportschool -</p>
             </div>
 
-            <div class="text">
+            <div class="text2">
               <p>Gamen -</p>
               <p>Muziek -</p>
               <p>Sportschool -</p>
@@ -99,19 +101,19 @@
 
         <div class="movingBox">
           <div class="movingText">
-            <div class="text">
+            <div class="text3">
               <p>Fps shooters -</p>
               <p>Counter strike -</p>
               <p>Valorant -</p>
             </div>
 
-            <div class="text">
+            <div class="text3">
               <p>Fps shooters -</p>
               <p>Counter strike -</p>
               <p>Valorant -</p>
             </div>
 
-            <div class="text">
+            <div class="text3">
               <p>Fps shooters -</p>
               <p>Counter strike -</p>
               <p>Valorant -</p>
@@ -121,13 +123,13 @@
 
         <div class="movingBox">
           <div class="movingText">
-            <div class="text">
+            <div class="text4">
               <p>Ambient -</p>
               <p>Hiphop -</p>
               <p>House -</p>
               <p>Indie -</p>
             </div>
-            <div class="text">
+            <div class="text4">
               <p>Ambient -</p>
               <p>Hiphop -</p>
               <p>House -</p>
@@ -144,31 +146,64 @@
         <div class="canvas">
           <ul id="leerdoelTargets">
             <li>
-              <button>
+              <button popovertarget="leerdoel1">
                 <img
                   class="bullseye"
                   src="images/target1.svg"
                   alt="bullseye icon"
                 />
               </button>
+              <div popover id="leerdoel1">
+                <h2>Leerdoel 1</h2>
+                <p>
+                  Een solide basis leggen in html, css en javascript om zo goed
+                  voort te kunnen bouwen met frameworks en verder de front-end
+                  development kant op gaan.
+                </p>
+              </div>
             </li>
             <li>
-              <button>
+              <button popovertarget="leerdoel2">
                 <img
                   class="bullseye"
                   src="images/target2.svg"
                   alt="bullseye icon"
                 />
               </button>
+              <div popover id="leerdoel2">
+                <div class="flex-container">
+                  <h2>Leerdoel 2</h2>
+                  <!-- <button popovertargetaction="hide" class="close-button">
+                    <img
+                      src="images/close.svg"
+                      alt="kruis om popover te sluiten"
+                    />
+                  </button> -->
+                </div>
+                <p>
+                  Niet gelijk de code induiken, eerst een beeld voor mezelf
+                  vormen qua ontwerp met (simpele) schetsen op papier. Zo kan ik
+                  gerichter te werk gaan.
+                </p>
+                <p>Klik buiten de box om te sluiten</p>
+              </div>
             </li>
             <li>
-              <button>
+              <button popovertarget="leerdoel3">
                 <img
                   class="bullseye"
                   src="images/target3.svg"
                   alt="bullseye icon"
                 />
               </button>
+              <div popover id="leerdoel3">
+                <h2>Leerdoel 3</h2>
+                <p>
+                  Mezelf uitdagen en zoveel mogelijk zelf doen, zodat ik de
+                  concepten later ook echt zelf kan toepassen en niet meer
+                  vergeet.
+                </p>
+              </div>
             </li>
           </ul>
         </div>
@@ -186,6 +221,7 @@
       <h2>Loading game...</h2>
       <progress max="100" value="0"></progress>
     </aside>
+    <script src="js/main.js" defer></script>
+    <script src="js/leerdoelen.js" defer></script>
   </body>
-  <script src="js/main.js" defer></script>
 </html>
