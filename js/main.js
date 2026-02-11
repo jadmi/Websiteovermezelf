@@ -5,10 +5,12 @@ const hobbyElement = document.querySelectorAll(".text2 p:first-of-type");
 
 const base = "https://fdnd.directus.app/items";
 let endpoint =
-  "/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&sort=name&filter[fav_game][_nempty]";
+  "/person?filter[squads][squad_id][tribe][name]=CMD%20Minor%20Web%20Dev&filter[squads][squad_id][cohort]=2526&sort=name&filter[fav_game][_nempty]&limit=5";
 let url = base + endpoint;
 
-let lijst = document.querySelector(".games");
+let lijst = document.querySelector(".game");
+let gameImage = document.querySelector(".gameImage");
+let gamesUl = document.querySelector(".games");
 
 const progressBar = document.querySelector("progress");
 
@@ -26,20 +28,20 @@ const updateProgress = () => {
   }
 };
 
-fetchNaam(naamURL).then(function (response) {
-  console.log(response.data);
-  nameElement.forEach((element) => {
-    element.innerHTML = `
-      ${response.data.name.split(" ")[0] + " -"}
-    `;
-  });
-});
+// fetchNaam(naamURL).then(function (response) {
+//   console.log(response.data);
+//   nameElement.forEach((element) => {
+//     element.innerHTML = `
+//       ${response.data.name.split(" ")[0] + " -"}
+//     `;
+//   });
+// });
 
-async function fetchNaam(naamURL) {
-  return await fetch(naamURL)
-    .then((response) => response.json())
-    .catch((error) => error);
-}
+// async function fetchNaam(naamURL) {
+//   return await fetch(naamURL)
+//     .then((response) => response.json())
+//     .catch((error) => error);
+// }
 
 async function haalMinorMensenop() {
   let response = await fetch(url);
@@ -49,19 +51,28 @@ async function haalMinorMensenop() {
 
   deMensenIndeMinor.forEach((minorMens) => {
     let voornaam = minorMens.name.split(" ")[0];
+    // https://stackoverflow.com/questions/5963182/how-to-remove-spaces-from-a-string-using-javascript
+    let favGame = minorMens.fav_game.replace(/\s+/g, "");
 
     console.log(voornaam);
+    console.log(favGame);
 
-    let minorMensHTML = ` <li>
-        <p>${voornaam} - ${minorMens.fav_game} </p>
-      </li> `;
-    console.log(minorMens.fav_game);
-    lijst.insertAdjacentHTML("beforeend", minorMensHTML);
-    console.log(lijst.styles);
+    let newLi = document.createElement("li");
+    let newImg = document.createElement("img");
+    let newP = document.createElement("p");
+
+    newImg.src = `images/gameCovers/${favGame.toLowerCase()}.png`;
+    newP.textContent = `${voornaam} - ${favGame}`;
+
+    // copilot gebruikt voor de juiste methode om elementen in de ul te inserten (appendChild)
+    newLi.appendChild(newImg);
+    newLi.appendChild(newP);
+
+    gamesUl.appendChild(newLi);
   });
 }
 
-fetchNaam();
+// fetchNaam();
 
 requestAnimationFrame(updateProgress);
 

@@ -13,6 +13,7 @@
 /* ====================== */
 
 html {
+  scroll-snap-type: y proximity;
   --theme: light;
   scroll-behavior: smooth;
   --sectionPadding: 1rem;
@@ -42,7 +43,6 @@ html {
 body {
   margin: 0;
   height: 100%;
-  accent-color: rgb(202, 14, 186);
   color: var(--textColor);
 
   background: var(--bg), var(--bgImage);
@@ -62,6 +62,10 @@ body {
 /* dark mode styling*/
 /* ====================== */
 
+label {
+  font-family: var(--bodyFont);
+}
+
 html {
   @media (prefers-color-scheme: dark) {
     --theme: dark;
@@ -72,12 +76,14 @@ html {
 
 /* hulp van Sanne */
 html:has([value="light"]:checked) {
+  accent-color: rgb(206, 37, 192);
   --theme: light;
   --imgShadow: drop-shadow(0 10px 30px hsla(248, 74%, 52%, 1));
 }
 
 html:has([value="dark"]:checked) {
   --theme: dark;
+  accent-color: rgb(27, 27, 27);
 }
 
 @container style(--theme:light) {
@@ -463,6 +469,7 @@ button {
 }
 
 .canvas {
+  scroll-snap-align: center;
   width: 80vw;
   height: 80vh;
   margin: auto;
@@ -476,7 +483,6 @@ button {
 
 .leerdoelAnimation {
   animation-name: --leerdoelenbuttons;
-  animation-delay: 1;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -493,7 +499,6 @@ html:has(:popover-open) {
 :popover-open {
   color: white;
   background-color: hsla(288, 71%, 48%, 0.695);
-  opacity: 0.8;
   background-image: var(--bgImage);
   background-size: cover;
   background-position: bottom;
@@ -553,14 +558,28 @@ html:has(:popover-open) {
 /* ====================== */
 
 .games {
-  list-style-type: none;
+  padding: 0;
+  display: grid;
+  place-items: center center;
+  gap: 2em;
 }
 
-.fc26 {
-  background-image: url(../images/gameCovers/fc26.png);
-  width: 30vw;
-  height: 30vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+.games p {
+  margin: 0;
+}
+
+.games li {
+  gap: 0.5em;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style-type: none;
+  align-items: center;
+}
+
+.games img {
+  width: 50vw;
+  height: 40vh;
+  object-fit: cover;
 }
