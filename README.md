@@ -154,6 +154,11 @@ https://github.com/user-attachments/assets/7ce716bf-088a-4f43-99d3-59ab9e40dda1
 
 Als ik nog even zou reflecteren op mijn leerdoelen maar ook in het algemeen, ben ik tevreden met mijn site. Tuurlijk het kan altijd beter maar het heeft zeker een bijdrage gemaakt aan mijn leerdoelen, ik heb dan ook een leerdoel css animaties leren en daar heb ik me op gefocust bij deze site. Verder was het goed om javascript en API's te herhalen want het was eerlijk gezegd grotendeels weggevallen. Tot slot had ik voorafgaand wat papieren schetsen gemaakt (leerdoel voorafgaand schetsen) wat hielp voor mezelf om een beeld te maken en aan het begin houvast te hebben. 
 
+## Leerdoelen
+1. Een solide basis leggen in html, css en javascript om zo goed voort te kunnen bouwen met frameworks en verder de front-end development kant op gaan.
+2. Niet gelijk de code induiken, eerst een beeld voor mezelf vormen qua ontwerp met (simpele) schetsen op papier. Zo kan ik gerichter te werk gaan.
+3. Mezelf uitdagen en zoveel mogelijk zelf doen, zodat ik de concepten later ook echt zelf kan toepassen en niet meer vergeet.
+
 
 ## Bronnenlijst
 https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css
