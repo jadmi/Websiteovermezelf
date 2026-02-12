@@ -208,6 +208,13 @@ progress[value]::-webkit-progress-bar {
   border-radius: 2px;
 }
 
+@media (min-width: 768px) {
+  progress[value] {
+    width: 60%;
+    height: 1.5em;
+  }
+}
+
 section {
   padding: var(--sectionPadding);
   height: 100vh;
@@ -390,6 +397,7 @@ p {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
 .movingBox:nth-of-type(2) .movingText,
 .movingBox:nth-of-type(4) .movingText {
   animation-name: movingWords2;
