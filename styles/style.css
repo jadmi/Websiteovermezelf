@@ -14,20 +14,21 @@
 
 html {
   scroll-snap-type: y proximity;
+  overflow-x: hidden;
   --theme: light;
   scroll-behavior: smooth;
   --sectionPadding: 1rem;
   --headerFont: "headerFont", monospace;
   --bodyFont: "bodyFont", monospace;
-  --bodyFontSize: 1.6em;
-  --headerFontSize: clamp(2em, 10vw, 3.5em);
-  --loadingFontSize: 1.5em;
+  --bodyFontSize: clamp(1.7rem, 1.2913rem + 2.0435vw, 2.875rem);
+  --headerFontSize: clamp(2rem, 1.4783rem + 2.6087vw, 3.5rem);
+  --loadingFontSize: clamp(1.5rem, 0.9783rem + 2.6087vw, 3rem);
   /* kleurencode van figma */
   --headerShadow: 0 0 17.622px #06f, 0 5px 8.811px #06f;
   --textShadow: 0 5px 8.811px #ff00e5;
   --bodyShadow: 0 5px 20px #ffffff;
   --imgShadow: drop-shadow(0 10px 30px #470f42);
-  --textColor: white;
+  --textColor: rgb(255, 255, 255);
 
   --bgImage: url(../images/bg.png);
 }
@@ -64,7 +65,27 @@ body {
 
 label {
   font-family: var(--bodyFont);
+  font-size: var(--bodyFontSize);
 }
+
+label:first-of-type {
+  color: #c3defc;
+}
+
+label:last-of-type {
+  color: #cc00ff;
+}
+
+input {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* input {
+  padding: 0.5em;
+  width: 10em;
+  height: 2em;
+} */
 
 html {
   @media (prefers-color-scheme: dark) {
@@ -76,14 +97,15 @@ html {
 
 /* hulp van Sanne */
 html:has([value="light"]:checked) {
-  accent-color: rgb(206, 37, 192);
+  accent-color: #328bf0;
   --theme: light;
   --imgShadow: drop-shadow(0 10px 30px hsla(248, 74%, 52%, 1));
+  --bodyShadow: 0 5px 20px #000;
 }
 
 html:has([value="dark"]:checked) {
   --theme: dark;
-  accent-color: rgb(27, 27, 27);
+  accent-color: #cc00ff;
 }
 
 @container style(--theme:light) {
@@ -208,11 +230,11 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: var(--div-padding);
+  justify-items: center;
 }
 
 .levelTitle {
   display: flex;
-  justify-content: center;
   grid-column: span 2;
   font-family: var(--headerFont);
   font-size: var(--headerFontSize);
@@ -233,7 +255,7 @@ section {
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using */
 /* https://stackoverflow.com/questions/35990445/how-to-move-a-div-up-and-down-infinitely-in-css3 */
 .levelImg {
-  width: clamp(15vw, 5vw, 25vw);
+  width: 13vw;
   animation: bounce 1.5s linear infinite;
   filter: var(--imgShadow);
 }
@@ -348,7 +370,7 @@ p {
 }
 
 #overMij p {
-  font-size: 1.7em;
+  font-size: clamp(1.7rem, 1.2478rem + 2.2609vw, 3rem);
 }
 
 /* hulp van Cyd */
@@ -382,7 +404,7 @@ p {
 .text3,
 .text4 {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   margin: 0 0.5rem;
 }
 
@@ -404,12 +426,31 @@ p {
   }
 }
 
+@media (min-width: 768px) {
+  .movingBox:nth-of-type(4) {
+    --duplicates: 5;
+  }
+  .movingBox:first-of-type {
+    --duplicates: 5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .movingBox:nth-of-type(4) {
+    --duplicates: 6;
+  }
+  .movingBox:first-of-type {
+    --duplicates: 6;
+  }
+}
+
 /* ====================== */
 /* Leerdoelen styling */
 /* ====================== */
 
 .instructieGrid {
   display: grid;
+  justify-items: center;
 }
 
 .glow {
@@ -474,7 +515,13 @@ button {
 }
 
 .bullseye {
-  width: 15vw;
+  width: clamp(10vw, 15vw, 70px);
+}
+
+@media (min-width: 768px) {
+  .bullseye {
+    max-width: 70px;
+  }
 }
 
 .leerdoelAnimation {
@@ -500,39 +547,37 @@ html:has(:popover-open) {
   background-position: bottom;
   border: none;
   border-radius: 1em;
-  width: 95%;
-  height: 30%;
+  width: 95vw;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  :popover-open {
+    width: 55vw;
+    height: fit-content;
+  }
+}
+
 :popover-open h2 {
-  font-size: 1.3em;
+  font-size: clamp(1.3rem, 0.7087rem + 2.9565vw, 3rem);
 }
 
 :popover-open p {
-  font-size: 1.2em;
+  font-size: clamp(1.2rem, 0.8565rem + 1.7174vw, 2.1875rem);
   text-shadow: none;
   margin: 0 0.3em 0.3em;
 }
 
 :popover-open p:nth-of-type(2) {
-  font-size: 1em;
-  color: rgb(131, 131, 131);
+  font-size: clamp(1.0938rem, 0.822rem + 1.3587vw, 1.875rem);
+  color: rgb(255, 0, 0);
   text-shadow: none;
   margin-top: 0.5em;
+  padding-bottom: 0.5em;
 }
-
-/* :popover-open .close-button {
-  display: flex;
-  justify-content: left;
-  width: fit-content;
-} */
-
-/* :popover-open button img {
-  height: 2.5em;
-} */
 
 @keyframes --leerdoelenbuttons {
   0% {
@@ -556,9 +601,23 @@ html:has(:popover-open) {
 .games {
   padding: 0;
   display: grid;
-  place-items: center center;
+  place-items: center;
+  align-items: start;
   gap: 2em;
 }
+
+@media (min-width: 768px) {
+  .games {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* @media (min-width: 1024px) {
+  .games {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 2em;
+  }
+} */
 
 .games p {
   margin: 0;
@@ -569,7 +628,6 @@ html:has(:popover-open) {
   width: fit-content;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   list-style-type: none;
   align-items: center;
 }
