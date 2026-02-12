@@ -81,12 +81,6 @@ input {
   height: 1.5em;
 }
 
-/* input {
-  padding: 0.5em;
-  width: 10em;
-  height: 2em;
-} */
-
 html {
   @media (prefers-color-scheme: dark) {
     --theme: dark;
@@ -134,7 +128,7 @@ html:has([value="dark"]:checked) {
   }
 }
 
-.modeSwitcher {
+.themeSwitcher {
   display: flex;
   justify-content: center;
   gap: 1em;
@@ -145,6 +139,7 @@ html:has([value="dark"]:checked) {
 /* Loading screen styling */
 /* ====================== */
 /* hulp van Sanne */
+
 aside {
   pointer-events: none;
   position: fixed;
@@ -159,10 +154,8 @@ aside {
   right: 0;
 
   animation-name: disappearScreen;
-  /* animation-duration: 2.5s;
-  animation-delay: 2.3s; */
-  animation-duration: 0.1s;
-  animation-delay: 0.1s;
+  animation-duration: 2.5s;
+  animation-delay: 2.3s;
   animation-fill-mode: forwards;
 
   display: grid;
@@ -253,7 +246,9 @@ section {
 }
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using */
+
 /* https://stackoverflow.com/questions/35990445/how-to-move-a-div-up-and-down-infinitely-in-css3 */
+
 .levelImg {
   width: 13vw;
   animation: bounce 1.5s linear infinite;
@@ -284,22 +279,28 @@ section {
 
   li {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
     font-size: var(--bodyFontSize);
     font-family: var(--bodyFont);
     text-shadow: var(--textShadow);
     animation: bounce 1.5s linear infinite;
   }
   a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
     text-decoration: none;
     color: inherit;
   }
 }
 
-section h2 {
+.levelTitle {
+  font-size: var(--headerFontSize);
+}
+
+section h1,
+h2 {
   font-family: var(--headerFont);
   font-size: var(--headerFontSize);
   text-shadow: var(--headerShadow);
@@ -365,11 +366,11 @@ p {
   overflow: hidden;
 }
 
-#overMij {
+#aboutMe {
   align-content: start;
 }
 
-#overMij p {
+#aboutMe p {
   font-size: clamp(1.7rem, 1.2478rem + 2.2609vw, 3rem);
 }
 
@@ -611,13 +612,6 @@ html:has(:popover-open) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* @media (min-width: 1024px) {
-  .games {
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0 2em;
-  }
-} */
 
 .games p {
   margin: 0;
