@@ -397,7 +397,7 @@ p {
 }
 
 .movingBox:nth-of-type(4) {
-  --duplicates: 2;
+  --duplicates: 3;
 }
 
 .text,
