@@ -133,7 +133,33 @@ Toch nog bezig geweest om wat voortgang te maken in de tussentijd, geleerd over 
 - let op consistente naamgeving
 - javascript comments bij functies
 - letten op let/const
-- scroll snap op site
+- scroll snap op (deel van) site
 ## Woensdag 11 februari - checkout
 Vandaag ben ik bezig geweest met het leerdoelen spel afmaken door de popovers toeg te voegen. Verder ben ik met de extra eis aan de slag gegaan, de favoriete games inladen en weergeven, wel handmatig de covers maken. Geleerd hoe je verder met de API werkt, van anderen data ophalen en deze inserten met .appendChild.
+
+# Voortgang week 2 (einde)
+De laatste loodjes, ik heb zoals hierboven genoemd vooral aan de API gewerkt om een aantal games te weergeven. Ook heb ik gewerkt aan responsiveness, denk aan het leren toepassen van clamp(), hoe je precies de calculator gebruikt en dat je verschillende units kan gebruiken zoals vw en px. Verder nog enkele media queries voor specifieke dingen, zoals de grid columns bepalen. Tot slot gewerkt aan dingetjes die ik nog vergeten was, zoals light dark mode stylen en code cleanliness. Op het moment van schrijven werken helaas alleen de marquee animaties niet helemaal responsive, wel geprobeerd maar ben er niet meer uitgekomen. 
+
+Site op mobiel, ik heb mobile-first gewerkt (loading screen hetzelfde gebleven):
+
+https://github.com/user-attachments/assets/6e7a7771-ea5f-4bb7-8dbd-f20e166b2154
+
+
+Hoe de mate van responsiveness is:
+
+
+
+https://github.com/user-attachments/assets/7ce716bf-088a-4f43-99d3-59ab9e40dda1
+
+
+Als ik nog even zou reflecteren op mijn leerdoelen maar ook in het algemeen, ben ik tevreden met mijn site. Tuurlijk het kan altijd beter maar het heeft zeker een bijdrage gemaakt aan mijn leerdoelen, ik heb dan ook een leerdoel css animaties leren en daar heb ik me op gefocust bij deze site. Verder was het goed om javascript en API's te herhalen want het was eerlijk gezegd grotendeels weggevallen. Tot slot had ik voorafgaand wat papieren schetsen gemaakt (leerdoel voorafgaand schetsen) wat hielp voor mezelf om een beeld te maken en aan het begin houvast te hebben. 
+
+
+
+
+
+
+
+
+
 
