@@ -155,10 +155,27 @@ https://github.com/user-attachments/assets/7ce716bf-088a-4f43-99d3-59ab9e40dda1
 Als ik nog even zou reflecteren op mijn leerdoelen maar ook in het algemeen, ben ik tevreden met mijn site. Tuurlijk het kan altijd beter maar het heeft zeker een bijdrage gemaakt aan mijn leerdoelen, ik heb dan ook een leerdoel css animaties leren en daar heb ik me op gefocust bij deze site. Verder was het goed om javascript en API's te herhalen want het was eerlijk gezegd grotendeels weggevallen. Tot slot had ik voorafgaand wat papieren schetsen gemaakt (leerdoel voorafgaand schetsen) wat hielp voor mezelf om een beeld te maken en aan het begin houvast te hebben. 
 
 
+## Bronnenlijst
+https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css
 
+https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using
 
+https://stackoverflow.com/questions/35990445/how-to-move-a-div-up-and-down-infinitely-in-css3
 
+https://prismic.io/blog/css-text-animations
 
+https://stackoverflow.com/questions/5963182/how-to-remove-spaces-from-a-string-using-javascript
+
+https://www.educative.io/answers/how-to-ensure-an-event-listener-is-only-fired-once-in-javascript
+
+AI:
+Copilot gebruikt voor de juiste methode om elementen in de ul te inserten (appendChild)
+
+Stukje chatGPT in de functie, kwam zelf niet uit op position absolute
+Prompt: "How to keep the list items within the boundary of the container?"
+
+Stukje chatGPT in de functie, kwam zelf met setTimeout maar dat werkte dus niet, AI raadde setinterval aan. 
+Prompt: "How to make the function run infinitely?"
 
 
 
